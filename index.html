@@ -1,0 +1,206 @@
+index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Transparencia - Gasto COVID-19</title>
+    <!-- Tailwind CSS para el diseño moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons para los iconos -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        /* Contenedor responsivo para el iframe de Power BI */
+        .powerbi-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .powerbi-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Barra de Navegación superior -->
+    <nav class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="activity" class="text-blue-300 w-8 h-8"></i>
+                    <span class="font-bold text-xl tracking-wide">DataMart MINSA | Inteligencia de Negocios</span>
+                </div>
+                <div class="hidden md:block">
+                    <span class="text-sm text-blue-200 bg-blue-800 px-3 py-1 rounded-full border border-blue-700">Proyecto Universitario</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Cabecera -->
+        <div class="mb-8 border-l-4 border-blue-600 pl-4">
+            <h1 class="text-3xl font-bold text-gray-900">Dashboard de Ejecución Presupuestal COVID-19</h1>
+            <p class="text-gray-600 mt-2 text-lg">Analice el gasto público a través de las visualizaciones interactivas. Este modelo responde a 15 interrogantes críticas de negocio detalladas en la parte inferior.</p>
+        </div>
+
+        <!-- SECCIÓN 1: DASHBOARD POWER BI -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-12">
+            <div class="border-b border-gray-100 bg-gray-50 p-4 flex justify-between items-center">
+                <h2 class="font-semibold text-gray-800 flex items-center gap-2">
+                    <i data-lucide="bar-chart-2" class="w-5 h-5 text-blue-600"></i>
+                    Tablero de Control Interactivo (Haga clic en los gráficos para filtrar)
+                </h2>
+                <span class="text-xs font-medium bg-green-100 text-green-800 px-2 py-1 rounded-full flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> En línea
+                </span>
+            </div>
+            
+            <div class="p-2 sm:p-4 bg-gray-100">
+                <!-- ========================================== -->
+                <!-- AQUÍ DEBES PEGAR TU CÓDIGO IFRAME DE POWER BI -->
+                <!-- ========================================== -->
+                <div class="powerbi-container bg-white rounded-lg relative">
+                    
+                   <iframe title="powerbi" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiMWRjOWVmMDctYmRhZi00OWNhLTk3ZDEtYjRiMzQ2NGFjYjQ2IiwidCI6ImM1ZDIzYjA5LWFmMDEtNGFlYy1hYjc0LTdhNWQxZGEwMTA4NCJ9" frameborder="0" allowFullScreen="true"></iframe>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: LAS 15 PREGUNTAS DE NEGOCIO -->
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                <i data-lucide="help-circle" class="w-6 h-6 text-blue-600"></i>
+                Preguntas de Negocio Resueltas
+            </h2>
+            <p class="text-gray-600 mt-1">El modelo multidimensional diseñado (Data Mart) y el Dashboard superior permiten responder de forma dinámica a las siguientes 15 consultas gerenciales divididas por temáticas.</p>
+        </div>
+
+        <!-- Grid de Temáticas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Tema 1 -->
+            <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-blue-100 p-2 rounded-lg text-blue-700">
+                        <i data-lucide="pie-chart" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800">1. Ejecución General</h3>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li class="flex gap-2 items-start"><span class="font-bold text-blue-600">Q1.</span> ¿Cuánto se gastó por programa de salud, mes a mes?</li>
+                    <li class="flex gap-2 items-start"><span class="font-bold text-blue-600">Q2.</span> ¿Cuánto se ejecutó del presupuesto por entidad ejecutora en cada año?</li>
+                    <li class="flex gap-2 items-start"><span class="font-bold text-blue-600">Q3.</span> ¿Cuánto se devengó por tipo de gasto (Bienes/Servicios)?</li>
+                    <li class="flex gap-2 items-start"><span class="font-bold text-blue-600">Q4.</span> ¿Cuánto se giró efectivamente por categoría de gasto?</li>
+                </ul>
+            </div>
+
+            <!-- Tema 2 -->
+            <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-red-100 p-2 rounded-lg text-red-700">
+                        <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800">2. Brechas de Ineficiencia</h3>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li class="flex gap-2 items-start"><span class="font-bold text-red-600">Q5.</span> ¿Cuánto dinero quedó sin gastar por entidad ejecutora en cada año?</li>
+                    <li class="flex gap-2 items-start"><span class="font-bold text-red-600">Q6.</span> ¿Cuánto del presupuesto no se ejecutó por función del Estado?</li>
+                    <li class="flex gap-2 items-start"><span class="font-bold text-red-600">Q7.</span> ¿Cuánto se dejó de gastar en salud por distrito en cada año?</li>
+                </ul>
+            </div>
+
+            <!-- Tema 3 -->
+            <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-amber-100 p-2 rounded-lg text-amber-700">
+                        <i data-lucide="git-commit" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800">3. Ciclo del Gasto</h3>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li class="flex gap-2 items-start"><span class="font-bold text-amber-600">Q8.</span> ¿Cuánto del presupuesto certificado llegó a comprometerse por fuente?</li>
+                    <li class="flex gap-2 items-start"><span class="font-bold text-amber-600">Q9.</span> ¿Cuánto del presupuesto comprometido llegó a devengarse por tipo de gasto?</li>
+                    <li class="flex gap-2 items-start"><span class="font-bold text-amber-600">Q10.</span> ¿Cuál es la fase con mayor cuello de botella (Embudo) en general?</li>
+                </ul>
+            </div>
+
+            <!-- Tema 4 -->
+            <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-emerald-100 p-2 rounded-lg text-emerald-700">
+                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800">4. Análisis Territorial</h3>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li class="flex gap-2 items-start"><span class="font-bold text-emerald-600">Q11.</span> ¿Cuánto se gastó en salud por distrito en cada año?</li>
+                    <li class="flex gap-2 items-start"><span class="font-bold text-emerald-600">Q12.</span> ¿Cuáles son los distritos con menor ejecución presupuestal por año?</li>
+                    <li class="flex gap-2 items-start"><span class="font-bold text-emerald-600">Q13.</span> ¿Cuánto recibió cada departamento respecto al total nacional?</li>
+                </ul>
+            </div>
+
+            <!-- Tema 5 -->
+            <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-purple-100 p-2 rounded-lg text-purple-700">
+                        <i data-lucide="shield-plus" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800">5. Recursos Estratégicos</h3>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li class="flex gap-2 items-start"><span class="font-bold text-purple-600">Q14.</span> ¿Cuánto se ejecutó en bienes críticos (Oxígeno e Infraestructura) por entidad?</li>
+                    <li class="flex gap-2 items-start"><span class="font-bold text-purple-600">Q15.</span> ¿Cuánto del presupuesto fue destinado a Inversión vs. Gasto Corriente?</li>
+                </ul>
+            </div>
+            
+            <!-- Tarjeta de Arquitectura -->
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 shadow-sm text-white">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-gray-700 p-2 rounded-lg text-gray-300">
+                        <i data-lucide="database" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg">Arquitectura del Proyecto</h3>
+                </div>
+                <div class="text-sm text-gray-300 space-y-2 mt-4">
+                    <p><strong>Volumen:</strong> +9 Millones de registros (MEF).</p>
+                    <p><strong>ETL:</strong> SQL Server Integration Services (SSIS).</p>
+                    <p><strong>Bodega:</strong> Modelo Estrella en SQL Server.</p>
+                    <p><strong>Vistas:</strong> 5 Vistas Maestras agrupadas.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-white border-t border-gray-200 text-gray-500 py-8 text-center text-sm mt-12">
+        <p class="font-medium text-gray-600">Implementación de Data Mart - Curso de Inteligencia de Negocios</p>
+        <p class="mt-2">Desarrollado y optimizado utilizando el proceso ETL (Extracción, Transformación y Carga).</p>
+    </footer>
+
+    <!-- Inicializar iconos -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
